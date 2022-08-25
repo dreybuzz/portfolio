@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-menu-item {
+  @apply hover:text-gray-400 cursor-pointer hover:scale-105 transition-transform;
+}
+
+.bordered {
+  @apply border-4 border-red-600;
+}
+
+#about-me-img-container {
+  @apply h-full rounded-full overflow-hidden object-cover;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-900;
+}
+
+#skills-container-2xl:hover {
+  @apply scale-110 cursor-pointer;
+}

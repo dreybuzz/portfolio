@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/brands.min.css"
+      integrity="sha512-nS1/hdh2b0U8SeA8tlo7QblY6rY6C+MgkZIeRzJQQvMsFfMQFUKp+cgMN2Uuy+OtbQ4RoLMIlO2iF7bIEY3Oyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./../public/assets/css/styles.css" />
+    <title>Damilare - Justified</title>
+  </head>
+  <body class="font-sen h-screen">
+    <!-- NavBar & Hero Start -->
+    <div
+      class="relative h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 overflow-hidden"
+    >
+      <nav class="fixed top-0 bg-white w-full z-10">
+        <div class="container mx-auto p-5 flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="./../public/assets/img/logo_full_transparent.png"
+              alt=""
+              class="w-16 sm:w-24"
+            />
+          </div>
+
+          <!-- Nav Menu -->
+          <ul
+            class="hidden md:flex space-x-10 items-center justify-center uppercase font-bold text-sm"
+          >
+            <li class="nav-menu-item">Home</li>
+            <li class="nav-menu-item">Skills</li>
+            <li class="nav-menu-item">Projects</li>
+            <li class="nav-menu-item">GitHub</li>
+            <li class="nav-menu-item">About</li>
+            <li class="nav-menu-item">Contact Me</li>
+          </ul>
+
+          <!-- Theme Toggle -->
+          <div
+            class="border-2 rounded-md p-2 cursor-pointer relative hidden md:flex space-between gap-4"
+          >
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+            <!-- <div class="p-3 bg-black absolute right-0 rounded-full" /> -->
+          </div>
+
+          <!-- Mobile Menu -->
+          <div class="md:hidden flex cursor-pointer z-10">
+            <!-- Toggle -->
+            <i class="fa-solid fa-bars z-10" id="menu-toggler"></i>
+
+            <!-- Nav Menu Items -->
+            <ul
+              class="absolute w-full bg-indigo-900 left-0 top-0 text-white space-y-5 p-10 text-center rounded-b-3xl uppercase hidden"
+              id="mobile-nav"
+            >
+              <li class="nav-menu-item">Home</li>
+              <li class="nav-menu-item">About</li>
+              <li class="nav-menu-item">Skills</li>
+              <li class="nav-menu-item">Projects</li>
+              <li class="nav-menu-item">GitHub</li>
+              <li class="nav-menu-item">Contact Me</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <!-- Image -->
+      <img
+        src="./../public/assets/img/black_hoodie_gesture_dunno_animated_flipped.png"
+        alt=""
+        class="h-5/6 lg:h-full md:-left-1/4 mx-auto absolute top-12 sm:top-16 -right-10 bottom-0 lg:top-auto lg:left-4 object-cover"
+      />
+
+      <!-- Circle -->
+      <div
+        class="absolute hidden lg:block w-big h-big bg-indigo-900 rounded-full -bottom-1/4 right-0 left-0 mx-auto -z-20"
+      ></div>
+
+      <!-- Roles Text -->
+      <div
+        class="absolute top-20 left-5 sm:top-1/4 lg:top-32 text-xl sm:text-4xl sm:left-10 md:left-18 md:top-22 lg:text-6xl xl:text-7xl xl:left-20 xl:top-30 2xl:left-48 font-semibold"
+      >
+        <span class="text-gray-600" id="roles"></span>
+        <p class="text-red-900">Developer</p>
+      </div>
+
+      <!-- Intro Text -->
+      <div
+        class="rounded-xl bg-gray-200 p-3 shadow-lg absolute bottom-5 left-4 sm:left-10 sm:bottom-14 w-fit h-fit md:bottom-24 md:left-auto md:right-5 lg:bottom-auto lg:top-36 lg:right-4 xl:right-16"
+      >
+        <p
+          class="font-extrabold text-indigo-600 text-xs xl:text-base 2xl:text-lg"
+        >
+          Hey👋, I'm Damilare,
+        </p>
+
+        <p class="mt-2 text-2xs sm:text-xs xl:text-sm 2xl:text-base">
+          You can call me
+          <span class="font-bold text-indigo-600">Dammy</span> for short.
+        </p>
+
+        <span class="mt-1 text-2xs sm:text-xs xl:text-sm 2xl:text-base">
+          Need to develop
+          <span class="text-red-500 font-semibold">mobile</span> or
+          <span class="text-red-500 font-semibold">web</span> apps? I got you
+          covered.
+          <p class="mt-1 text-2xs sm:text-xs xl:text-sm 2xl:text-base">
+            with 5+ years of experience in Software Development.
+          </p>
+        </span>
+
+        <div class="mt-3 text-2xs sm:text-xs xl:text-sm 2xl:text-base">
+          <button
+            class="text-white pointer-cursor bg-indigo-600 rounded-md shadow-2xl p-2 fw-bold uppercase hover:scale-110 ease-in-out duration-500"
+          >
+            Hire Me
+          </button>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div
+        id="skills-container-2xl"
+        class="hidden lg:block rounded-xl bg-gray-200 pt-5 pl-5 pr-20 shadow-lg max-h-96 overflow-y-scroll absolute bottom-24 lg:left-10 xl:left-20 2xl:left-44 w-fit ease-in-out duration-700"
+      ></div>
+    </div>
+    <!-- NavBar & Hero End -->
+
+    <!-- Skills Start -->
+    <div id="skills" class="lg:hidden container mx-auto p-3">
+      <!-- Header -->
+      <div class="p-3 flex">
+        <h3 class="mx-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl"></h3>
+      </div>
+
+      <!-- Skills Container -->
+      <div
+        id="skills-container"
+        class="container rounded-xl bg-gray-200 p-3 shadow-lg max-h-96 overflow-scroll text-xs sm:text-sm lg:text-base"
+      ></div>
+    </div>
+    <!-- Skills End -->
+
+    <!-- About Start -->
+    <div
+      id="about-me"
+      class="hidden container mx-auto px-5 py-10 lg:px-20 gap-5 xl:gap-20 items-center"
+    >
+      <!-- Image -->
+      <div class="" id="about-me-img-container">
+        <img
+          src="./../public/assets/img/white_hoodie.jpg"
+          alt=""
+          id="about-me-img"
+          class="2xl:h-1/3 object-cover"
+        />
+      </div>
+
+      <!-- Right -->
+      <div class="flex flex-col my-auto text-xs">
+        <!-- Title -->
+        <h2
+          class="text-indigo-900 uppercase text-extrabold mb-1 sm:mb-2 md:mb-3 text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl lg:mb-5 md:mx-auto"
+        >
+          About Me
+        </h2>
+        <span
+          class="tracking-wide text-2xs sm:text-xs md:text-sm lg:text-base xl:text-xl"
+        >
+          Nothing really interesting going on here as I do conform to most of
+          the programmer stereotypes.
+          <p class="mt-1 sm:mt-2 md:mt-2 xl:mt-5">
+            Picked up coding in college and almost haven't gone a day without
+            coding ever since. I love learning about new technologies whilst
+            ensuring to keep up on existing ones.
+          </p>
+          <p class="mt-1 sm:mt-2 md:mt-3 xl:mt-5">
+            I occasionally play video games and football/soccer whenever I’m not
+            coding or working.
+          </p>
+        </span>
+      </div>
+    </div>
+    <!-- About End -->
+  </body>
+  <script src="./autoTyping.js"></script>
+  <script
+    src="//code.jquery.com/jquery-3.4.1.min.js"
+    type="text/javascript"
+    charset="utf-8"
+  ></script>
+  <script
+    src="//unpkg.com/json-format-highlight@1.0.1/dist/json-format-highlight.js"
+    type="text/javascript"
+    charset="utf-8"
+  ></script>
+  <script src="./main.js"></script>
+</html>
