@@ -179,6 +179,7 @@ navMenuItemSkills.addEventListener("click", () => {
 })
 
 
+
 const navMenuItemAbout = document.querySelector("#nav-menu-item-about")
 const aboutMeElements = ["roles", "intro-text", "about-me-nutshell"]
 navMenuItemAbout.addEventListener("click", () => {
@@ -201,5 +202,128 @@ mobileNavMenuItems.forEach((navMenuItem) => {
         menuToggler.classList.toggle("text-white")
     })
 })
+
+const projects = [
+    {
+        title: "PayMaker",
+        image: "paymaker.png",
+        technologies: ["react", "laravel"],
+        status: 1,
+        description: "Fintech Startup - Payment Gateway & Transaction App. Manage & Categorize Payments, Pay Anyone Instantly, Multi-Wallet System.",
+        link: ""
+    },
+
+    {
+        title: "Illusion Finance",
+        image: "illusion-finance.svg",
+        technologies: ["react"],
+        status: 1,
+        description: "Demo Bank & Financial Institution Dashboard. Save, transfer & manage funds with beneficiaries.",
+        link: ""
+    },
+
+    {
+        title: "Admin Dashboard Generator",
+        image: "admin-dashboard-generator.png",
+        technologies: ["react"],
+        status: 1,
+        description: "Generate & Download Custom UI Dashboards without writing code.",
+        link: ""
+    },
+
+    {
+        title: "Algorithm Whiteboard",
+        image: "algorithm-whiteboard.png",
+        technologies: ["js"],
+        status: 1,
+        description: "Whiteboard to visualize data structures & algorithms.",
+        link: ""
+    },
+
+    {
+        title: "NUBAN Validator",
+        image: "nuban-validator.png",
+        technologies: ["js"],
+        status: 1,
+        description: "Validate bank account numbers using NUBAN algorithm - Nigerian Banking System.",
+        link: ""
+    },
+
+    {
+        title: "Issuer Detector",
+        image: "issuer-detector.png",
+        technologies: ["js"],
+        status: 1,
+        description: "JS class to identify issuer of debit & credit cards in Nigeria ",
+        link: ""
+    },
+
+    {
+        title: "Soccer Shop",
+        image: "soccer-shop.png",
+        technologies: ["react"],
+        status: 0,
+        description: "",
+        link: ""
+    },
+
+    {
+        title: "Phantom Blog",
+        image: "phantom-blog.png",
+        technologies: ["react", "tailwind", "graphql", "nextjs"],
+        status: 0,
+        description: "",
+        link: ""
+    },
+
+    {
+        title: "Phantom",
+        image: "phantom.png",
+        technologies: ["mongodb", "expressjs", "react", "node"],
+        status: 0,
+        description: "",
+        link: ""
+    },
+
+    {
+        title: "Employee Manager",
+        image: "employee-manage.png",
+        technologies: ["c++"],
+        status: 0,
+        description: "",
+        link: ""
+    }
+]
+const projectsContainer = document.querySelector("#projects-container")
+projectsContainer.innerHTML = ``
+projects.forEach((project) => {
+    project.status ?
+        projectsContainer.innerHTML += `<div class="project-container">
+    <img
+      src="./../public/assets/img/${project.image}"
+      alt="${project.title}"
+      srcset=""
+      class="project-img"
+    />
+    <div class="project-info">
+      <div class="project-title">${project.title}</div>
+      <div class="project-description">
+            ${project.description.length ? project.description : `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+            tempore at cum distinctio voluptate ex necessitatibus ut magni
+            maiores quia.`}  
+      </div>
+      <div class="project-view-button">
+        <a href="${project.link.length ? project.length : "#"}" target="_blank"><i
+          class="fa-solid fa-up-right-from-square project-view-btn-icon"
+        ></i></a>
+      </div>
+    </div>
+    </div>` : ""
+})
+
+
+
+
+
 
 
