@@ -1,5 +1,5 @@
 const menuToggler = document.querySelector("#menu-toggler")
-const mobileNav = document.querySelector("#mobile-nav")
+const mobileNav = document.querySelector("#mobile-nav-menu-items")
 
 menuToggler.addEventListener("click", () => {
     menuToggler.classList.toggle("text-white")
@@ -166,5 +166,40 @@ const formatted = jsonFormatHighlight(skills, customColorOptions)
 const skillsContainer = document.querySelector("#skills-container")
 const skillsContainer2xl = document.querySelector("#skills-container-2xl")
 const skillsVariable = '<span class="text-red-900 font-bold"> let skills = </span>'
-skillsContainer.innerHTML = '<pre>\n' + skillsVariable + formatted + '\n</pre>'
+skillsContainer.innerHTML += '<pre>\n' + skillsVariable + formatted + '\n</pre>'
 skillsContainer2xl.innerHTML += '<pre>\n' + skillsVariable + formatted + '\n</pre>'
+
+
+const navMenuItemSkills = document.querySelector("#nav-menu-item-skills")
+navMenuItemSkills.addEventListener("click", () => {
+    skillsContainer2xl.classList.remove("wobble-hor-bottom")
+    window.requestAnimationFrame(function () {
+        skillsContainer2xl.classList.add("wobble-hor-bottom")
+    });
+})
+
+
+const navMenuItemAbout = document.querySelector("#nav-menu-item-about")
+const aboutMeElements = ["roles", "intro-text", "about-me-nutshell"]
+navMenuItemAbout.addEventListener("click", () => {
+    aboutMeElements.forEach((elementID) => {
+        let elementNode = document.getElementById(elementID)
+        elementNode.classList.remove("bounce-bottom")
+        window.requestAnimationFrame(function () {
+            elementNode.classList.add("bounce-bottom")
+        });
+    })
+
+})
+
+
+const mobileNavMenu = document.querySelector("#mobile-nav-menu-items")
+const mobileNavMenuItems = document.querySelectorAll(".nav-menu-item-mobile")
+mobileNavMenuItems.forEach((navMenuItem) => {
+    navMenuItem.addEventListener("click", () => {
+        mobileNavMenu.classList.add("hidden")
+        menuToggler.classList.toggle("text-white")
+    })
+})
+
+

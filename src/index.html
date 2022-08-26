@@ -26,10 +26,12 @@
     />
     <link rel="stylesheet" href="./../public/assets/css/styles.css" />
     <title>Damilare - Justified</title>
+    <link rel="shortcut icon" href="./../public/assets/img/logo.svg" />
   </head>
   <body class="font-sen h-screen">
     <!-- NavBar & Hero Start -->
     <div
+      id="home"
       class="relative h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 overflow-hidden"
     >
       <nav class="fixed top-0 bg-white w-full z-10">
@@ -47,12 +49,29 @@
           <ul
             class="hidden md:flex space-x-10 items-center justify-center uppercase font-bold text-sm"
           >
-            <li class="nav-menu-item">Home</li>
-            <li class="nav-menu-item">Skills</li>
-            <li class="nav-menu-item">Projects</li>
-            <li class="nav-menu-item">GitHub</li>
-            <li class="nav-menu-item">About</li>
-            <li class="nav-menu-item">Contact Me</li>
+            <a href="#home"
+              ><li class="nav-menu-item" id="nav-menu-item-skills">
+                Skills
+              </li></a
+            >
+            <a href="#projects"
+              ><li class="nav-menu-item" id="nav-menu-item-projects">
+                Projects
+              </li></a
+            >
+            <a href="https://github.com/dreybuzz" target="_blank"
+              ><li class="nav-menu-item" id="nav-menu-item-github">
+                GitHub
+              </li></a
+            >
+            <a href="#home"
+              ><li class="nav-menu-item" id="nav-menu-item-about">About</li></a
+            >
+            <a href="#contact-me">
+              <li class="nav-menu-item" id="nav-menu-item-contact">
+                Contact Me
+              </li></a
+            >
           </ul>
 
           <!-- Theme Toggle -->
@@ -72,14 +91,26 @@
             <!-- Nav Menu Items -->
             <ul
               class="absolute w-full bg-indigo-900 left-0 top-0 text-white space-y-5 p-10 text-center rounded-b-3xl uppercase hidden"
-              id="mobile-nav"
+              id="mobile-nav-menu-items"
             >
               <li class="nav-menu-item">Home</li>
-              <li class="nav-menu-item">About</li>
-              <li class="nav-menu-item">Skills</li>
-              <li class="nav-menu-item">Projects</li>
-              <li class="nav-menu-item">GitHub</li>
-              <li class="nav-menu-item">Contact Me</li>
+              <a href="#about-me"
+                ><li class="nav-menu-item nav-menu-item-mobile">About</li></a
+              >
+              <a href="#skills"
+                ><li class="nav-menu-item nav-menu-item-mobile">Skills</li></a
+              >
+              <a href="#projects"
+                ><li class="nav-menu-item nav-menu-item-mobile">Projects</li></a
+              >
+              <a href="https://github.com/dreybuzz" target="_blank"
+                ><li class="nav-menu-item nav-menu-item-mobile">GitHub</li></a
+              >
+              <a href="#contact-me"
+                ><li class="nav-menu-item nav-menu-item-mobile">
+                  Contact Me
+                </li></a
+              >
             </ul>
           </div>
         </div>
@@ -102,12 +133,13 @@
       <div
         class="absolute top-20 left-5 sm:top-1/4 lg:top-32 text-xl sm:text-4xl sm:left-10 md:left-18 md:top-22 lg:text-6xl xl:text-7xl xl:left-20 xl:top-30 2xl:left-48 font-semibold"
       >
-        <span class="text-gray-600" id="roles"></span>
-        <p class="text-red-900">Developer</p>
+        <span>&nbsp;<span class="text-gray-600" id="roles"></span></span>
+        <p class="text-red-900">&nbsp;Developer</p>
       </div>
 
       <!-- Intro Text -->
       <div
+        id="intro-text"
         class="rounded-xl bg-gray-200 p-3 shadow-lg absolute bottom-5 left-4 sm:left-10 sm:bottom-14 w-fit h-fit md:bottom-24 md:left-auto md:right-5 lg:bottom-auto lg:top-36 lg:right-4 xl:right-16"
       >
         <p
@@ -143,8 +175,39 @@
       <!-- Skills -->
       <div
         id="skills-container-2xl"
-        class="hidden lg:block rounded-xl bg-gray-200 pt-5 pl-5 pr-20 shadow-lg max-h-96 overflow-y-scroll absolute bottom-24 lg:left-10 xl:left-20 2xl:left-44 w-fit ease-in-out duration-700"
+        class="hidden lg:block rounded-xl bg-gray-200 pt-5 pl-5 pr-20 shadow-lg max-h-96 overflow-y-scroll absolute bottom-24 lg:left-10 xl:left-20 2xl:left-52 w-fit ease-in-out duration-700"
       ></div>
+
+      <!-- About -->
+      <div
+        id="about-me-nutshell"
+        class="container flex-column absolute bottom-20 bg-gray-300 from-indigo-900 rounded-xl shadow-2xl xl:right-14 lg:right-4 hidden lg:flex flex-col p-5 lg:w-1/3 xl:w-1/3 h-fit"
+      >
+        <div class="flex justify-center items-center mb-5">
+          <img
+            src="./../public/assets/img/knee_pose.jpg"
+            alt=""
+            class="w-10 h-10 rounded-full overflow-hidden object-cover"
+          />
+          <span
+            class="uppercase text-sm ml-5 font-extrabold underline underline-offset-4"
+            >Dammy In A Nutshell</span
+          >
+        </div>
+        <span class="tracking-wide text-sm">
+          Nothing really interesting going on here as I do conform to most of
+          the programmer stereotypes.
+          <p class="mt-2">
+            Picked up coding in college and almost haven't gone a day without
+            coding ever since. I love learning about new technologies whilst
+            ensuring to keep up on existing ones.
+          </p>
+          <p class="mt-2">
+            I occasionally play video games and football/soccer whenever I’m not
+            coding or working.
+          </p>
+        </span>
+      </div>
     </div>
     <!-- NavBar & Hero End -->
 
@@ -163,47 +226,240 @@
     </div>
     <!-- Skills End -->
 
-    <!-- About Start -->
-    <div
-      id="about-me"
-      class="hidden container mx-auto px-5 py-10 lg:px-20 gap-5 xl:gap-20 items-center"
-    >
-      <!-- Image -->
-      <div class="" id="about-me-img-container">
-        <img
-          src="./../public/assets/img/white_hoodie.jpg"
-          alt=""
-          id="about-me-img"
-          class="2xl:h-1/3 object-cover"
-        />
-      </div>
+    <!-- Projects Start -->
+    <!-- Header -->
+    <span class="section-header">Projects</span>
+    <div id="projects" class="mx-auto p-5 overflow-hidden">
+      <div
+        id="projects-container"
+        class="flex flex-wrap items-center justify-center gap-16"
+      >
+        <div class="project-container">
+          <img
+            src="https://picsum.photos/300?random=1"
+            alt="Project Thumbnail"
+            srcset=""
+            class="project-img"
+          />
+          <div class="project-info">
+            <div class="project-title">Project Title</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+              tempore at cum distinctio voluptate ex necessitatibus ut magni
+              maiores quia.
+            </div>
+            <div class="project-view-button">
+              <i
+                class="fa-solid fa-up-right-from-square project-view-btn-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
 
-      <!-- Right -->
-      <div class="flex flex-col my-auto text-xs">
-        <!-- Title -->
-        <h2
-          class="text-indigo-900 uppercase text-extrabold mb-1 sm:mb-2 md:mb-3 text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-6xl lg:mb-5 md:mx-auto"
+        <div class="project-container">
+          <img
+            src="https://picsum.photos/300?random=2"
+            alt="Project Thumbnail"
+            srcset=""
+            class="project-img"
+          />
+          <div class="project-info">
+            <div class="project-title">Project Title</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+              tempore at cum distinctio voluptate ex necessitatibus ut magni
+              maiores quia.
+            </div>
+            <div class="project-view-button">
+              <i
+                class="fa-solid fa-up-right-from-square project-view-btn-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-container">
+          <img
+            src="https://picsum.photos/300?random=3"
+            alt="Project Thumbnail"
+            srcset=""
+            class="project-img"
+          />
+          <div class="project-info">
+            <div class="project-title">Project Title</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+              tempore at cum distinctio voluptate ex necessitatibus ut magni
+              maiores quia.
+            </div>
+            <div class="project-view-button">
+              <i
+                class="fa-solid fa-up-right-from-square project-view-btn-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-container">
+          <img
+            src="https://picsum.photos/300?random=4"
+            alt="Project Thumbnail"
+            srcset=""
+            class="project-img"
+          />
+          <div class="project-info">
+            <div class="project-title">Project Title</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+              tempore at cum distinctio voluptate ex necessitatibus ut magni
+              maiores quia.
+            </div>
+            <div class="project-view-button">
+              <i
+                class="fa-solid fa-up-right-from-square project-view-btn-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-container">
+          <img
+            src="https://picsum.photos/300?random=5"
+            alt="Project Thumbnail"
+            srcset=""
+            class="project-img"
+          />
+          <div class="project-info">
+            <div class="project-title">Project Title</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+              tempore at cum distinctio voluptate ex necessitatibus ut magni
+              maiores quia.
+            </div>
+            <div class="project-view-button">
+              <i
+                class="fa-solid fa-up-right-from-square project-view-btn-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-container">
+          <img
+            src="https://picsum.photos/300?random=6"
+            alt="Project Thumbnail"
+            srcset=""
+            class="project-img"
+          />
+          <div class="project-info">
+            <div class="project-title">Project Title</div>
+            <div class="project-description">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus
+              tempore at cum distinctio voluptate ex necessitatibus ut magni
+              maiores quia.
+            </div>
+            <div class="project-view-button">
+              <i
+                class="fa-solid fa-up-right-from-square project-view-btn-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Projects End -->
+
+    <!-- About Start -->
+    <div id="about-me" class="lg:hidden">
+      <span class="section-header">Dammy In A Nutshell</span>
+      <div
+        class="container mx-auto px-5 py-10 flex flex-wrap-reverse md:flex-nowrap items-start justify-between gap-10"
+      >
+        <!-- Image -->
+        <div
+          class="rounded-lg shadow-xl overflow-hidden w-full md:w-1/2 lg:w-auto xl:w-1/2"
         >
-          About Me
-        </h2>
-        <span
-          class="tracking-wide text-2xs sm:text-xs md:text-sm lg:text-base xl:text-xl"
-        >
-          Nothing really interesting going on here as I do conform to most of
-          the programmer stereotypes.
-          <p class="mt-1 sm:mt-2 md:mt-2 xl:mt-5">
-            Picked up coding in college and almost haven't gone a day without
-            coding ever since. I love learning about new technologies whilst
-            ensuring to keep up on existing ones.
-          </p>
-          <p class="mt-1 sm:mt-2 md:mt-3 xl:mt-5">
-            I occasionally play video games and football/soccer whenever I’m not
-            coding or working.
-          </p>
-        </span>
+          <img
+            src="./../public/assets/img/white_hoodie.jpg"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- About Text -->
+        <div class="">
+          <span class="tracking-wide lg:text-2xl">
+            Nothing really interesting going on here as I do conform to most of
+            the programmer stereotypes.
+            <p class="mt-2 lg:mt-5">
+              Picked up coding in college and almost haven't gone a day without
+              coding ever since. I love learning about new technologies whilst
+              ensuring to keep up on existing ones.
+            </p>
+            <p class="mt-2 lg:mt-5">
+              I occasionally play video games and football/soccer whenever I’m
+              not coding or working.
+            </p>
+          </span>
+        </div>
       </div>
     </div>
     <!-- About End -->
+
+    <!-- Contact Start -->
+    <div
+      id="contact-me"
+      class="container px-5 flex flex-wrap items-center justify-center mt-10 2xl:px-80 mx-auto"
+    >
+      <!-- Left -->
+      <div class="w-full md:w-1/2 xl:w-fit p-5 flex flex-col">
+        <span class="uppercase font-extrabold tracking-wide text-2xl"
+          >Contact Dammy</span
+        >
+        <span class="contact-option"
+          ><i class="fa-solid fa-at"></i> dammy@damilareidowu.com</span
+        >
+        <span class="contact-option"
+          ><i class="fa-solid fa-phone"></i> +1 (337) 245-0462</span
+        >
+        <span class="contact-option"
+          ><i class="fa-solid fa-mobile"></i> +234 903 135 2093</span
+        >
+        <span class="contact-option"
+          ><i class="fa-brands fa-playstation"></i> Dreybuzz
+        </span>
+        <span class="contact-option"
+          ><i class="fa-brands fa-xbox"></i> Dreybuzz
+        </span>
+        <span class="mt-5 mx-auto"
+          ><button class="btn">Download Resume</button></span
+        >
+      </div>
+
+      <!-- Right -->
+      <div
+        class="w-full h-full grow flex flex-col md:w-1/2 justify-between pt-7 px-5 pb-5"
+      >
+        <input type="text" name="" id="" class="mb-5" placeholder="Your Name" />
+        <input
+          type="email"
+          name=""
+          id=""
+          class="mb-5"
+          placeholder="E-Mail Address"
+        />
+        <textarea
+          name=""
+          id=""
+          class="mb-5 grow"
+          placeholder="Body"
+          rows="8"
+        ></textarea>
+        <div class="mx-auto">
+          <button class="btn">Send Message</button>
+        </div>
+      </div>
+    </div>
+    <!-- Contact End -->
   </body>
   <script src="./autoTyping.js"></script>
   <script
