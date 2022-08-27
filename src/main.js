@@ -161,6 +161,12 @@ const customColorOptions = {
     nullColor: 'cornflowerblue'
 };
 
+const themeToggler = document.querySelector("#theme-toggler")
+const themeIndicator = document.querySelector("#theme-indicator")
+themeToggler.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark")
+})
+
 
 const formatted = jsonFormatHighlight(skills, customColorOptions)
 const skillsContainer = document.querySelector("#skills-container")
@@ -210,7 +216,7 @@ const projects = [
         technologies: ["react", "laravel"],
         status: 1,
         description: "Fintech Startup - Payment Gateway & Transaction App. Manage & Categorize Payments, Pay Anyone Instantly, Multi-Wallet System.",
-        link: ""
+        link: "https://paymaker-landing.netlify.app"
     },
 
     {
@@ -219,7 +225,7 @@ const projects = [
         technologies: ["react"],
         status: 1,
         description: "Demo Bank & Financial Institution Dashboard. Save, transfer & manage funds with beneficiaries.",
-        link: ""
+        link: "https://illusion.damilareidowu.com"
     },
 
     {
@@ -228,7 +234,7 @@ const projects = [
         technologies: ["react"],
         status: 1,
         description: "Generate & Download Custom UI Dashboards without writing code.",
-        link: ""
+        link: "https://admin-dashboard-generator.netlify.app/"
     },
 
     {
@@ -237,7 +243,7 @@ const projects = [
         technologies: ["js"],
         status: 1,
         description: "Whiteboard to visualize data structures & algorithms.",
-        link: ""
+        link: "https://algorithm-whiteboard.netlify.app"
     },
 
     {
@@ -246,7 +252,7 @@ const projects = [
         technologies: ["js"],
         status: 1,
         description: "Validate bank account numbers using NUBAN algorithm - Nigerian Banking System.",
-        link: ""
+        link: "https://nuban-validator.netlify.app/"
     },
 
     {
@@ -255,7 +261,7 @@ const projects = [
         technologies: ["js"],
         status: 1,
         description: "JS class to identify issuer of debit & credit cards in Nigeria ",
-        link: ""
+        link: "https://issuer-detector.netlify.app/"
     },
 
     {
@@ -313,13 +319,68 @@ projects.forEach((project) => {
             maiores quia.`}  
       </div>
       <div class="project-view-button">
-        <a href="${project.link.length ? project.length : "#"}" target="_blank"><i
+        <a href="${project.link.length ? project.link : "#"}" target="_blank"><i
           class="fa-solid fa-up-right-from-square project-view-btn-icon"
         ></i></a>
       </div>
     </div>
     </div>` : ""
 })
+
+const contactForm = document.querySelector("#contact-me-form")
+const toast = document.querySelector("#toast")
+const submitBtn = document.querySelector("#send-message-btn")
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    submitBtn.disabled = true
+    const formData = Object.fromEntries(new FormData(e.target).entries())
+    $.ajax({
+        url: "https://damilareidowu.com/contact-me/",
+        method: "POST",
+        dataType: "json",
+        data: `name=${formData.name}&email=${formData.email}&body=${formData.message}`,
+        success: (data) => {
+            // console.log("Success", data)
+            toast.innerHTML = data.response
+            toast.classList.contains("bg-red-700") && toast.classList.remove("bg-red-700")
+            toast.classList.add("bg-green-500")
+        },
+        error: (err) => {
+            // console.log("Error", err)
+            toast.innerHTML = "Error Sending Message"
+            toast.classList.contains("bg-green-500") && toast.classList.remove("bg-green-500")
+            toast.classList.add("bg-red-700")
+        }
+    })
+    contactForm.reset()
+    submitBtn.disabled = false
+    toast.classList.remove("w-0", "h-0")
+    toast.classList.add("w-fit", "h-fit", "p-3")
+    setTimeout(() => {
+        toast.classList.add("w-0", "h-0")
+        toast.classList.remove("w-fit", "h-fit", "p-3")
+    }, 5000)
+})
+
+const contactOptions = document.querySelectorAll(".contact-option")
+
+contactOptions.forEach(contactOption => {
+    const tooltipText = document.createElement("span")
+    tooltipText.innerText = "Copy To Clipboard"
+    tooltipText.classList.add("tooltiptext")
+    contactOption.appendChild(tooltipText)
+
+    contactOption.addEventListener("click", () => {
+        const contactOptionText = contactOption.childNodes[1].data.replace(" ", "")
+        navigator.clipboard.writeText(contactOptionText)
+        tooltipText.innerText = "Copied To Clipboard"
+    })
+
+    contactOption.addEventListener("mouseout", () => {
+        tooltipText.innerText = "Copy To Clipboard"
+    })
+})
+
 
 
 

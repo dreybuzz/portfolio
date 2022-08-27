@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
 .nav-menu-item {
   @apply hover:text-gray-400 cursor-pointer hover:scale-105 transition-transform;
 }
@@ -31,7 +27,7 @@ html {
 }
 
 .project-container {
-  @apply w-full sm:w-2/5 md:w-1/3 lg:w-1/4 xl:w-1/5 cursor-pointer relative h-fit;
+  @apply w-full sm:w-2/5 md:w-1/3 lg:w-1/4 xl:w-1/5 cursor-pointer relative bg-white rounded-xl shadow-xl;
 }
 
 .project-container:hover .project-img {
@@ -47,7 +43,7 @@ html {
 }
 
 .project-info {
-  @apply absolute left-0 bottom-0 text-white w-full h-full sm:h-0 overflow-hidden rounded-xl flex flex-col items-center justify-center bg-gradient-to-t from-red-900 text-center px-5 ease-linear duration-300;
+  @apply absolute left-0 bottom-0 text-white h-0 overflow-hidden rounded-xl flex flex-col items-center justify-center bg-gradient-to-t from-red-900 text-center px-5 ease-linear duration-300;
 }
 
 .project-title {
@@ -67,14 +63,47 @@ html {
 }
 
 .contact-option {
-  @apply shadow-lg mt-3 xl:mt-5 p-3 cursor-pointer hover:scale-105 ease-linear duration-300 hover:text-white hover:bg-black rounded-xl text-sm xl:text-base;
+  @apply relative shadow-lg shadow-slate-600 mt-3 xl:mt-5 p-3 cursor-pointer hover:scale-105 ease-linear duration-300 hover:text-white hover:bg-black rounded-xl text-sm xl:text-base dark:hover:bg-white dark:hover:text-black dark:shadow-gray-200/10;
+}
+
+.contact-option .tooltiptext {
+  @apply w-fit p-2;
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-option .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.contact-option:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 input,
 textarea,
 input:focus,
 textarea:focus {
-  @apply p-3 rounded-lg shadow-2xl border-b-4 outline-none;
+  @apply p-3 rounded-lg shadow-2xl border-b-4 outline-none dark:bg-slate-900 dark:text-white;
 }
 
 .btn {
@@ -326,4 +355,38 @@ textarea:focus {
 
 .nav-menu-item-mobile {
   @apply mt-5 ease-in-out duration-500;
+}
+
+.lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
 }
