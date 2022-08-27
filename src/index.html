@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -24,26 +24,22 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./../public/assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Damilare - Justified</title>
-    <link rel="shortcut icon" href="./../public/assets/img/logo.svg" />
+    <link rel="shortcut icon" href="./assets/img/logo.svg" />
   </head>
-  <body
-    class="font-sen h-screen ease-linear duration-1000 dark:bg-slate-900 dark:text-white"
-  >
+  <body class="font-sen h-screen">
     <!-- NavBar & Hero Start -->
     <div
       id="home"
-      class="relative h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 dark:from-slate-900 overflow-hidden"
+      class="relative h-1/2 lg:h-screen bg-gradient-to-t from-indigo-200 overflow-hidden"
     >
-      <nav
-        class="fixed top-0 bg-white dark:bg-slate-900 w-full z-10 dark:text-white"
-      >
+      <nav class="fixed top-0 bg-white w-full z-10">
         <div class="container mx-auto p-5 flex items-center justify-between">
           <!-- Logo -->
           <div class="flex items-center">
             <img
-              src="./../public/assets/img/logo_full_transparent.png"
+              src="./assets/img/logo_full_transparent.png"
               alt=""
               class="w-16 sm:w-24"
             />
@@ -78,8 +74,17 @@
             >
           </ul>
 
+          <!-- Theme Toggle -->
+          <div
+            class="border-2 rounded-md p-2 cursor-pointer relative hidden md:flex space-between gap-4"
+          >
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+            <!-- <div class="p-3 bg-black absolute right-0 rounded-full" /> -->
+          </div>
+
           <!-- Mobile Menu -->
-          <div class="flex md:hidden cursor-pointer">
+          <div class="md:hidden flex cursor-pointer z-10">
             <!-- Toggle -->
             <i class="fa-solid fa-bars z-10" id="menu-toggler"></i>
 
@@ -88,9 +93,7 @@
               class="absolute w-full bg-indigo-900 left-0 top-0 text-white space-y-5 p-10 text-center rounded-b-3xl uppercase hidden"
               id="mobile-nav-menu-items"
             >
-              <a href="#home">
-                <li class="nav-menu-item nav-menu-item-mobile">Home</li></a
-              >
+              <li class="nav-menu-item">Home</li>
               <a href="#about-me"
                 ><li class="nav-menu-item nav-menu-item-mobile">About</li></a
               >
@@ -110,49 +113,34 @@
               >
             </ul>
           </div>
-
-          <!-- Theme Toggle -->
-          <div
-            class="border-2 rounded-2xl px-2 py-1 cursor-pointer hidden md:flex justify-between items-center relative w-20 shadow-inner"
-            id="theme-toggler"
-          >
-            <span><i class="fa-solid fa-moon"></i></span>
-            <i class="fa-solid fa-sun"></i>
-            <div
-              class="bg-indigo-500 dark:bg-indigo-200 absolute my-auto rounded-full w-7 h-7 ease-linear duration-300 left-0 dark:translate-x-12"
-              id="theme-indicator"
-            />
-          </div>
         </div>
       </nav>
 
       <!-- Hero Content -->
       <!-- Image -->
       <img
-        src="./../public/assets/img/black_hoodie_gesture_dunno_animated_flipped.png"
+        src="./assets/img/black_hoodie_gesture_dunno_animated_flipped.png"
         alt=""
         class="h-5/6 lg:h-full md:-left-1/4 mx-auto absolute top-12 sm:top-16 -right-10 bottom-0 lg:top-auto lg:left-4 object-cover"
       />
 
       <!-- Circle -->
       <div
-        class="absolute hidden lg:block w-big h-big bg-indigo-900 dark:bg-black rounded-full -bottom-1/4 right-0 left-0 mx-auto -z-20"
+        class="absolute hidden lg:block w-big h-big bg-indigo-900 rounded-full -bottom-1/4 right-0 left-0 mx-auto -z-20"
       ></div>
 
       <!-- Roles Text -->
       <div
         class="absolute top-20 left-5 sm:top-1/4 lg:top-32 text-xl sm:text-4xl sm:left-10 md:left-18 md:top-22 lg:text-6xl xl:text-7xl xl:left-20 xl:top-30 2xl:left-48 font-semibold"
       >
-        <span
-          >&nbsp;<span class="text-gray-900 dark:text-gray-50" id="roles"></span
-        ></span>
-        <p class="text-red-700">&nbsp;Developer</p>
+        <span>&nbsp;<span class="text-gray-600" id="roles"></span></span>
+        <p class="text-red-900">&nbsp;Developer</p>
       </div>
 
       <!-- Intro Text -->
       <div
         id="intro-text"
-        class="rounded-xl bg-gray-200 p-3 shadow-lg absolute bottom-5 left-4 sm:left-10 sm:bottom-14 w-fit h-fit md:bottom-24 md:left-auto md:right-5 lg:bottom-auto lg:top-36 lg:right-4 xl:right-16 dark:text-black"
+        class="rounded-xl bg-gray-200 p-3 shadow-lg absolute bottom-5 left-4 sm:left-10 sm:bottom-14 w-fit h-fit md:bottom-24 md:left-auto md:right-5 lg:bottom-auto lg:top-36 lg:right-4 xl:right-16"
       >
         <p
           class="font-extrabold text-indigo-600 text-xs xl:text-base 2xl:text-lg"
@@ -187,17 +175,17 @@
       <!-- Skills -->
       <div
         id="skills-container-2xl"
-        class="hidden lg:block rounded-xl bg-gray-200 pt-5 pl-5 pr-20 shadow-lg max-h-96 overflow-y-scroll absolute bottom-24 lg:left-10 xl:left-20 2xl:left-52 w-fit ease-in-out duration-700 dark:text-black"
+        class="hidden lg:block rounded-xl bg-gray-200 pt-5 pl-5 pr-20 shadow-lg max-h-96 overflow-y-scroll absolute bottom-24 lg:left-10 xl:left-20 2xl:left-52 w-fit ease-in-out duration-700"
       ></div>
 
       <!-- About -->
       <div
         id="about-me-nutshell"
-        class="container flex-column absolute bottom-20 bg-gray-300 from-indigo-900 rounded-xl shadow-2xl xl:right-14 lg:right-4 hidden lg:flex flex-col p-5 lg:w-1/3 xl:w-1/3 h-fit dark:text-black"
+        class="container flex-column absolute bottom-20 bg-gray-300 from-indigo-900 rounded-xl shadow-2xl xl:right-14 lg:right-4 hidden lg:flex flex-col p-5 lg:w-1/3 xl:w-1/3 h-fit"
       >
         <div class="flex justify-center items-center mb-5">
           <img
-            src="./../public/assets/img/knee_pose.jpg"
+            src="./assets/img/knee_pose.jpg"
             alt=""
             class="w-10 h-10 rounded-full overflow-hidden object-cover"
           />
@@ -224,7 +212,7 @@
     <!-- NavBar & Hero End -->
 
     <!-- Skills Start -->
-    <div id="skills" class="lg:hidden container mx-auto p-3 dark:text-black">
+    <div id="skills" class="lg:hidden container mx-auto p-3">
       <!-- Header -->
       <div class="p-3 flex">
         <h3 class="mx-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl"></h3>
@@ -240,13 +228,8 @@
 
     <!-- Projects Start -->
     <!-- Header -->
-    <span class="section-header dark:bg-slate-900 dark:text-white"
-      >Projects</span
-    >
-    <div
-      id="projects"
-      class="mx-auto p-5 overflow-hidden dark:bg-slate-900 dark:text-white"
-    >
+    <span class="section-header">Projects</span>
+    <div id="projects" class="mx-auto p-5 overflow-hidden">
       <div
         id="projects-container"
         class="flex flex-wrap items-center justify-center gap-16"
@@ -258,21 +241,21 @@
     <div id="about-me" class="lg:hidden">
       <span class="section-header">Dammy In A Nutshell</span>
       <div
-        class="container mx-auto p-5 flex flex-wrap-reverse md:flex-nowrap items-start justify-between gap-10"
+        class="container mx-auto px-5 py-10 flex flex-wrap-reverse md:flex-nowrap items-start justify-between gap-10"
       >
         <!-- Image -->
         <div
           class="rounded-lg shadow-xl overflow-hidden w-full md:w-1/2 lg:w-auto xl:w-1/2"
         >
           <img
-            src="./../public/assets/img/white_hoodie.jpg"
+            src="./assets/img/white_hoodie.jpg"
             class="w-full h-full object-cover"
           />
         </div>
 
         <!-- About Text -->
         <div class="">
-          <span class="tracking-wide text-sm">
+          <span class="tracking-wide lg:text-2xl">
             Nothing really interesting going on here as I do conform to most of
             the programmer stereotypes.
             <p class="mt-2 lg:mt-5">
@@ -296,10 +279,7 @@
       class="container px-5 flex flex-wrap items-center justify-center mt-10 2xl:px-80 mx-auto"
     >
       <!-- Left -->
-      <div
-        class="w-full md:w-1/2 xl:w-fit p-5 flex flex-col"
-        id="contact-channels"
-      >
+      <div class="w-full md:w-1/2 xl:w-fit p-5 flex flex-col">
         <span class="uppercase font-extrabold tracking-wide text-2xl"
           >Contact Dammy</span
         >
@@ -324,41 +304,28 @@
       </div>
 
       <!-- Right -->
-
-      <form
-        id="contact-me-form"
+      <div
         class="w-full h-full grow flex flex-col md:w-1/2 justify-between pt-7 px-5 pb-5"
       >
-        <input
-          type="text"
-          name="name"
-          class="mb-5"
-          placeholder="Your Name"
-          required
-          id="name"
-        />
+        <input type="text" name="" id="" class="mb-5" placeholder="Your Name" />
         <input
           type="email"
-          name="email"
+          name=""
+          id=""
           class="mb-5"
           placeholder="E-Mail Address"
-          required
         />
         <textarea
-          name="message"
+          name=""
+          id=""
           class="mb-5 grow"
           placeholder="Body"
           rows="8"
-          required
-          minlength="10"
-          maxlength="2000"
         ></textarea>
-        <div class="mx-auto" id="send-btn-container">
-          <button type="submit" class="btn" id="send-message-btn">
-            Send Message
-          </button>
+        <div class="mx-auto">
+          <button class="btn">Send Message</button>
         </div>
-      </form>
+      </div>
     </div>
     <!-- Contact End -->
 
@@ -369,12 +336,6 @@
       © 2022 Copyright: DamilareIdowu.com
     </footer>
     <!-- Footer End -->
-
-    <!-- Toast -->
-    <div
-      class="w-0 h-0 fixed overflow-hidden text-white top-5 right-5 z-10 rounded-xl shadow-xl ease-out duration-1000"
-      id="toast"
-    ></div>
   </body>
   <script src="./autoTyping.js"></script>
   <script
