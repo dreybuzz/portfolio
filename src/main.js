@@ -221,6 +221,15 @@ const projects = [
     },
 
     {
+        title: "CineZen",
+        image: "cinizen.png",
+        technologies: ["react"],
+        status: 1,
+        description: "Cinema Commerce. Buy & Gift Cinema Tickets From Cinemas",
+        link: "https://cinezen.netlify.app"
+    },
+
+    {
         title: "Illusion Finance",
         image: "illusion-finance.svg",
         technologies: ["react"],
