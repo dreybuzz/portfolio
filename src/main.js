@@ -222,7 +222,7 @@ const projects = [
 
     {
         title: "CineZen",
-        image: "cinizen.png",
+        image: "cinezen.png",
         technologies: ["react"],
         status: 1,
         description: "Cinema Commerce. Buy & Gift Cinema Tickets From Cinemas",
