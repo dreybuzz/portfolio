@@ -21,6 +21,17 @@ const skills = [
     },
 
     {
+        "id": "language-skill-0",
+        "type": "programming",
+        "language": "C#",
+        "systems": [],
+        "frameworks": [".NET", ".NET Core"],
+        "libraries": [],
+        "testing": [],
+        "miscs": []
+    },
+
+    {
         "id": "language-skill-1",
         "type": "programming",
         "language": "PHP",
